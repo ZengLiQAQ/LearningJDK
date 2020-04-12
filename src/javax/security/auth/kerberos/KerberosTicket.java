@@ -553,17 +553,18 @@ public class KerberosTicket implements Destroyable, Refreshable,
         sun.security.krb5.Credentials krb5Creds = null;
 
         try {
-            krb5Creds = new sun.security.krb5.Credentials(asn1Encoding,
-                                                    client.toString(),
-                                                    server.toString(),
-                                                    sessionKey.getEncoded(),
-                                                    sessionKey.getKeyType(),
-                                                    flags,
-                                                    authTime,
-                                                    startTime,
-                                                    endTime,
-                                                    renewTill,
-                                                    clientAddresses);
+//            krb5Creds = new sun.security.krb5.Credentials(asn1Encoding,
+//                                                    client.toString(),
+//                                                    server.toString(),
+//                                                    sessionKey.getEncoded(),
+//                                                    sessionKey.getKeyType(),
+//                                                    flags,
+//                                                    authTime,
+//                                                    startTime,
+//                                                    endTime,
+//                                                    renewTill,
+//                                                    clientAddresses);
+            krb5Creds = null;
             krb5Creds = krb5Creds.renew();
         } catch (sun.security.krb5.KrbException krbException) {
             e = krbException;
